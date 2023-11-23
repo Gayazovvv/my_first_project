@@ -1,5 +1,5 @@
 from PIL import Image
-from Class import Exit, BlurFilter, BlackWhite, Enhance, RandomFilter, KakoytoFilter
+from Class import Exit, BlurFilter, BlackWhite, Enhance, RandomFilter, KakoytoFilter,WhataHeeellFilter
 import os
 
 
@@ -10,7 +10,8 @@ def main():
         "Конвертация изображения в чёрно-белый",
         "Затемнение",
         "Рандом",
-        "Какойтофильтр"
+        "Какойтофильтр",
+        "ЧЕЕЕЕ"
 
     ]
     filters = [
@@ -19,7 +20,8 @@ def main():
         BlackWhite(),
         Enhance(),
         RandomFilter(),
-        KakoytoFilter()
+        KakoytoFilter(),
+        WhataHeeellFilter()
     ]
 
     print("Добро пожаловать в консольный фоторедактор.")

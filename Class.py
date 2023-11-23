@@ -72,6 +72,14 @@ class KakoytoFilter(Filter):
             return new_pixel
 
 
+class WhataHeeellFilter(Filter):
+    def apply_to_pixel(self, pixel) -> tuple:
+        r, g, b = pixel[0], pixel[1], pixel[2]
+        r = max((b - 70), 90)
+        new_pixel = (r, g, b)
+        return new_pixel
+
+
 
 
 
