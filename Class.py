@@ -1,7 +1,7 @@
 from typing import Tuple
 from PIL import Image
 from math import exp, e
-
+from random import randint
 class Filter:
     def enhance(self, image, factor):
         return image
@@ -15,7 +15,7 @@ class Filter:
         for i in range(img.width):
             for j in range(img.height):
                 r, g, b = img.getpixel((i, j))
-                new_colors = self.apply_to_pixel(r, g, b)
+                new_colors = self.apply_to_pixel((r, g, b))
                 img.putpixel((i, j), new_colors)
         return img
 
@@ -57,7 +57,12 @@ class Enhance(Filter):
                 img.putpixel((i, j), (new_r, new_g, new_b))
 
         return img
-
+class RandomFilter(Filter):
+    def apply_to_pixel(self, pixel) -> tuple:
+        r, g, b = pixel[0], pixel[1], pixel[2]
+        r, g, b = randint(max(r-50, 0), min(r+50, 255)), randint(max(g-50, 0), min(g+50, 255)), randint(max(b-50, 0), min(b+50, 255))
+        new_pixel = (r, g, b)
+        return new_pixel
 
 # ВЫХОД, ПРОВЕРИТЬ ПО ТЗ, ДОБАВИТЬ ПОСЛЕДНИЙ ФИЛЬТР В МЕНЮ
 
