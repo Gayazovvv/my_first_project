@@ -64,7 +64,14 @@ class RandomFilter(Filter):
         new_pixel = (r, g, b)
         return new_pixel
 
-# ВЫХОД, ПРОВЕРИТЬ ПО ТЗ, ДОБАВИТЬ ПОСЛЕДНИЙ ФИЛЬТР В МЕНЮ
+class KakoytoFilter(Filter):
+        def apply_to_pixel(self, pixel) -> tuple:
+            r, g, b = pixel[0], pixel[1], pixel[2]
+            r = min((r-50), 0)
+            new_pixel = (r, g, b)
+            return new_pixel
+
+
 
 
 
